@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.select {
+	position: relative;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border: 1px solid gray;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.select .menu {
+	position: absolute;
+	top: 105%;
+	width: 100%;
+	max-height: 145px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid gray;
+	border-top: unset;
+	border-radius: 4px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background-color: white;
+}
+
+.select .menu .filter {
+	width: 100%;
+	height: 32.5px;
+	padding-left: 5px;
+	padding-right: 30px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	outline: unset;
+	font-size: 0.925em;
+}
+
+.select svg {
+	width: 20px;
+	height: 20px;
+}
+
+.select .menu-item {
+	display: block;
+	width: 100%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.select .menu-item:hover {
+	background-color: rgba(150, 150, 150, 0.3);
+}
+
+.switch {
+	display: flex;
+	align-items: center;
+	width: 50px;
+	height: 25px;
+	padding-left: 4px;
+	padding-right: 4px;
+	border-radius: 12.5px;
+	background-color: lightgray;
+	cursor: pointer;
+}
+
+.switch.off {
+	justify-content: flex-start;
+	opacity: 0.4;
+}
+
+.switch.on {
+	justify-content: flex-end;
+	opacity: 1;
+}
+
+.switch .slider {
+	z-index: 1;
+	border-radius: 50%;
+	width: 18.5px;
+	height: 18.5px;
+	background-color: white;
+}
+
+#page {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	height: 100vh;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	font-family: "Ubuntu Condensed", sans-serif;
+}
+
+#analog-clock {
+	width: 20%;
+	min-width: 265px;
+}
+
+#analog-clock .pattern {
+	position: relative;
+	width: 100%;
+	padding-top: 100%;
+	border: 1.5px solid gray;
+	border-radius: 50%;
+	color: gray;
+}
+
+#analog-clock .marker {
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.15em;
+	font-weight: bold;
+}
+
+#analog-clock .marker:nth-of-type(1) {
+	top: calc(5% - 7px);
+	right: calc(50% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(2) {
+	top: calc(50% - 7px);
+	right: calc(5% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(3) {
+	bottom: calc(5% - 7px);
+	right: calc(50% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(4) {
+	top: calc(50% - 7px);
+	left: calc(5% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(5) {
+	top: calc(11% - 7px);
+	right: calc(27.5% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(6) {
+	top: calc(11% - 7px);
+	left: calc(27.5% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(7) {
+	bottom: calc(11% - 7px);
+	right: calc(27.5% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(8) {
+	bottom: calc(11% - 7px);
+	left: calc(27.5% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(9) {
+	top: calc(27.5% - 7px);
+	right: calc(11% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(10) {
+	top: calc(27.5% - 7px);
+	left: calc(11% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(11) {
+	bottom: calc(27.5% - 7px);
+	right: calc(11% - 7px);
+}
+
+#analog-clock .marker:nth-of-type(12) {
+	bottom: calc(27.5% - 7px);
+	left: calc(11% - 7px);
+}
+
+#analog-clock .center {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	width: 2.5%;
+	transform: translate(50%, -50%);
+	padding-top: 2.5%;
+	border-radius: 50%;
+	background-color: gray;
+}
+
+#analog-clock .hand {
+	position: absolute;
+	transform-origin: 50% 100%;
+	background-color: gray;
+	bottom: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0.65;
+}
+
+#analog-clock .hand.hour {
+	height: 27.5%;
+	width: 4px;
+	transform: rotate(60deg);
+}
+
+#analog-clock .hand.minute {
+	height: 37.5%;
+	width: 4px;
+}
+
+#analog-clock .hand.second {
+	height: 37.5%;
+	width: 2px;
+	transform: rotate(30deg);
+}
+
+#analog-clock .period {
+	z-index: -1;
+	position: absolute;
+	top: 18%;
+	right: calc(50% - 12.5px);
+	width: 25px;
+	height: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid gray;
+	border-radius: 3px;
+	font-weight: bolder;
+}
+
+#digital-clock {
+	height: 80px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 3.5em;
+	color: gray;
+}
